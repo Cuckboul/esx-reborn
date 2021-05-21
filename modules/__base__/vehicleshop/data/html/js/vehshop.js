@@ -385,7 +385,7 @@ setter = function(event, setting, send_value) {
                 vehData[setting] = parseInt(send_value);
             }
 
-            window.parent.postMessage({ action: "changeMotorcycle", data: { value: send_value } }, '*');
+            window.parent.postMessage({ action: "vehshop.changeMotorcycle", data: { value: send_value } }, '*');
             break;
         default:
             throw new Error('Incorrect Event Type Passed to "Setter"');
