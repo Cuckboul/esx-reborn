@@ -226,15 +226,15 @@ module.OpenShopMenu = function()
   
         module.Frame:postMessage({
           type        = "initData",
-          sedans      = tonumber(#module.Vehicles["sedans"] + 1),
-          compact     = tonumber(#module.Vehicles["compacts"] + 1),
-          muscle      = tonumber(#module.Vehicles["muscle"] + 1),
-          sports      = tonumber(#module.Vehicles["sports"] + 1),
-          classics    = tonumber(#module.Vehicles["sportsclassics"] + 1),
-          super       = tonumber(#module.Vehicles["super"] + 1),
-          suvs        = tonumber(#module.Vehicles["suvs"] + 1),
-          offroad     = tonumber(#module.Vehicles["offroad"] + 1),
-          motorcycles = tonumber(#module.Vehicles["motorcycles"] + 1)
+          sedans      = tonumber(#module.Vehicles["sedans"] - 1),
+          compact     = tonumber(#module.Vehicles["compacts"] - 1),
+          muscle      = tonumber(#module.Vehicles["muscle"] - 1),
+          sports      = tonumber(#module.Vehicles["sports"] - 1),
+          classics    = tonumber(#module.Vehicles["sportsclassics"] - 1),
+          super       = tonumber(#module.Vehicles["super"] - 1),
+          suvs        = tonumber(#module.Vehicles["suvs"] - 1),
+          offroad     = tonumber(#module.Vehicles["offroad"] - 1),
+          motorcycles = tonumber(#module.Vehicles["motorcycles"] - 1)
         })
   
         module.DataInitiated = true
@@ -726,7 +726,7 @@ end
 
 module.ChangeVehicle = function(cat, val)
   local category = tostring(cat)
-  local value = tonumber(val)
+  local value = tonumber(val) + 1
 
   module.DeleteDisplayVehicleInsideShop()
   module.CurrentDisplayVehicle         = nil
