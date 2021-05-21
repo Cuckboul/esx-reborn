@@ -113,6 +113,10 @@ function Menu:constructor(name, data, focus)
       self:emit('internal:item.change', msg.prop, msg.val, msg.index + 1)
     elseif msg.action == 'item.click' then
       self:emit('internal:item.click', msg.index + 1)
+    elseif msg.action == 'item.in' then
+      self:emit('internal:item.in', msg.index + 1)
+    elseif msg.action == 'item.out' then
+      self:emit('internal:item.out', msg.index + 1)
     elseif msg.action == 'mouse.in' then
       self:mouseChange(true)
       self.mouseIn  = true

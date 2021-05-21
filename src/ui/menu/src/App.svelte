@@ -105,6 +105,14 @@
 	const onItemClick = (e, item, index) => {
 		window.parent.postMessage({action: 'item.click', index}, '*');
 	}
+	
+	const onItemEnter = (e, item, index) => {
+		window.parent.postMessage({action: 'item.in', index}, '*');
+	}
+
+	const onItemLeave = (e, item, index) => {
+		window.parent.postMessage({action: 'item.out', index}, '*');
+	}
 
 	const onSliderWheel = (e, item, index) => {
 
@@ -157,7 +165,7 @@
 			{#if item.visible}
 
 				{#if item.type === 'default' || item.type === 'button'}
-					<item class="{item.type === 'button' ? 'button' : ''}" on:click={e => onItemClick(e, item, i)}>{item.label}</item>
+					<item class="{item.type === 'button' ? 'button' : ''}" on:click={e => onItemClick(e, item, i)} on:mouseenter={e => onItemEnter(e, item, i)} on:mouseleave={e => onItemLeave(e, item, i)}>{item.label}</item>
 				{/if}
 
 				{#if item.type === 'slider'}
