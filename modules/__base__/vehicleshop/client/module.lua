@@ -355,7 +355,7 @@ module.Frame:on('message', function(msg)
     module.ChangeVehicle("suvs", msg.data.value)
   elseif msg.action == "vehshop.changeOffroad" then
     module.ChangeVehicle("offroad", msg.data.value)
-  elseif msg.action == "vehshop.changeMotorcycles" then
+  elseif msg.action == "vehshop.changeMotorcycle" then
     module.ChangeVehicle("motorcycles", msg.data.value)
   elseif msg.action == 'mouse.move' then
     module.MouseMove(msg)
