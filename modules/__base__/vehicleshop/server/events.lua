@@ -61,7 +61,7 @@ onRequest("vehicleshop:sellVehicle", function(source, cb, plate)
       ['@identifier'] = player.identifier,
       ['@plate'] = plate
     }, function(result)
-      if result then
+      if #result > 0 then
         if result[1].id == player:getIdentityId() and result[1].identifier == player.identifier then
           callbackData = {
             resellPrice = module.GroupDigits(result[1].sell_price),
